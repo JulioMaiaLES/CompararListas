@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar a Correspondência de dois arquivos CSV/XLSX</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script> <!-- Include XLSX library -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        label, input {
+            margin: 10px 0;
+            display: block;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparar a Correspondência de dois arquivos CSV/XLSX</h1>
+
+    <label for="listOrigin">Upload do arquivo CSV/XLSX:</label>
+    <input type="file" id="listOrigin" accept=".csv,.xlsx">
+
+    <label for="listDest">Upload do arquivo CSV/XLSX:</label>
+    <input type="file" id="listDest" accept=".csv,.xlsx">
+
+    <label for="sequenceLength">Tamanho da Sequência (Digite 0 para uma correspondência completa de cada termo):</label>
+    <input type="number" id="sequenceLength" min="0" value="0">
+
+    <button class="btn" onclick="processFiles()">Executar</button>
+
+    <div id="output" style="margin-top: 20px;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

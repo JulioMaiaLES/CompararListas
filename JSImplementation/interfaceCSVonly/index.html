@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correspondência de Arquivos CSV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        label, input {
+            margin: 10px 0;
+            display: block;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparar a Correspondência de dois arquivos CSV</h1>
+
+    <label for="listOrigin">Upload do arquivo CSV:</label>
+    <input type="file" id="listOrigin" accept=".csv">
+
+    <label for="listDest">Upload do arquivo CSV:</label>
+    <input type="file" id="listDest" accept=".csv">
+
+    <label for="sequenceLength">Tamanho da Sequência(Digite 0 para uma correspondência completa de cada termo):</label>
+    <input type="number" id="sequenceLength" min="0" value="0">
+
+    <button class="btn" onclick="processFiles()">Executar</button>
+
+    <div id="output" style="margin-top: 20px;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
