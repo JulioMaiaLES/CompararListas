@@ -51,7 +51,7 @@ for originTerm in listOrigin:
     dicRet[originTerm] = [len(matches)] + matches
 
 
-with open("output3.txt", "w") as f:
+with open("outputs/output3.txt", "w") as f:
     for term, matches in dicRet.items():
         # Write the origin term and the number of matches
         f.write(f"{term}: {matches[0]} correspondencias\n")

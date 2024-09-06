@@ -1,0 +1,40 @@
+Medicine: 4 correspondencias
+    Telemedicine
+    Virtual Reality in Medicine
+    3D Printing in Medicine
+    Precision Medicine
+
+Learning: 2 correspondencias
+    Machine Learning
+    Deep Learning
+
+Health: 4 correspondencias
+    Health technology
+    Electronic Health Records (EHR)
+    Blockchain in Healthcare
+    Smart Sensors in Healthcare
+
+Smart: 2 correspondencias
+    Smartphone
+    Smart Sensors in Healthcare
+
+a: 18 correspondencias
+    Smartphone
+    Health technology
+    Artificial Intelligence
+    Machine Learning
+    Deep Learning
+    Big Data Analytics
+    Wearable Devices
+    Electronic Health Records (EHR)
+    Medical Imaging
+    Natural Language Processing (NLP)
+    Predictive Analytics
+    Blockchain in Healthcare
+    Virtual Reality in Medicine
+    Augmented Reality
+    Genomic Data Analysis
+    Remote Patient Monitoring
+    Neural Networks
+    Smart Sensors in Healthcare
+
