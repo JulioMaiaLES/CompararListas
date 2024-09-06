@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+}
+
+label, input {
+    margin: 10px 0;
+    display: block;
+}
+
+.radio_container{
+    display: flex; 
+    align-items: center;
+}
+
+.radio_container_label{
+    margin-right: 15px;
+}
+
+.radio_label_csv{
+    display: flex; 
+    align-items: center; 
+    margin-right: 10px;
+}
+
+.radio_label_xlsx{
+    display: flex; 
+    align-items: center;
+}
+
+.radio_label{
+    margin-left: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

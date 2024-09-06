@@ -17,7 +17,7 @@ function processFiles() {
             const listDest = filesContent[1];
 
             const result = compareFiles(listOrigin, listDest, sequenceLength);
-            displayOutput(result);
+            downloadFile(result);
         })
         .catch(error => console.error('Erro ao processar os arquivos:', error));
 }
@@ -87,8 +87,20 @@ function compareFiles(listOrigin, listDest, sequenceLength) {
     return output;
 }
 
+function downloadFile(result) {
+    const isXLSXSelected = document.getElementById('xlsxOption').checked;
+
+    if (isXLSXSelected) {
+        // If XLSX is selected, generate XLSX file
+        generateXLSX(result);
+    } else {
+        // If CSV is selected, generate CSV file
+        generateCSV(result);
+    }
+}
+
 // Function to display results as CSV
-function displayOutput(result) {
+function generateCSV(result) {
     let csvContent = "data:text/csv;charset=utf-8,";
     csvContent += "Termos,Numero de Ocorrencias,Termo Correspondentes\n";
 
@@ -100,8 +112,26 @@ function displayOutput(result) {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "sequence_match_results.csv");
+    link.setAttribute("download", "current_mixed_results.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+}
+
+function generateXLSX(result) {
+    // Create a workbook and a worksheet
+    let wb = XLSX.utils.book_new();
+    let ws_data = [["Termos", "Numero de Ocorrencias", "Termo Correspondentes"]]; // Headers
+
+    // Add result data to the worksheet
+    result.forEach(row => {
+        ws_data.push(row);
+    });
+
+    // Create the worksheet and add to workbook
+    let ws = XLSX.utils.aoa_to_sheet(ws_data);
+    XLSX.utils.book_append_sheet(wb, ws, "Resultados");
+
+    // Write the workbook and download as XLSX
+    XLSX.writeFile(wb, "current_mixed_results.xlsx");
 }

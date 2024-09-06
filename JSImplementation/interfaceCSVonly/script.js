@@ -4,7 +4,7 @@ function processFiles() {
     const sequenceLength = parseInt(document.getElementById('sequenceLength').value);
 
     if (!listOriginFile || !listDestFile) {
-        alert('Please upload both listOrigin and listDest files.');
+        alert('Por favor, faça o upload de ambos os arquivos.');
         return;
     }
 
@@ -39,7 +39,7 @@ function matchSequences(listOrigin, listDest, charSequenceLength) {
             if (matches.length > 0) {
                 output.push([originTerm, matches.length, matches[0]]);
                 matches.slice(1).forEach(match => {
-                    output.push(["", "", match]);
+                    output.push(['', '', match]);
                 });
             }
         });
@@ -58,7 +58,7 @@ function matchSequences(listOrigin, listDest, charSequenceLength) {
             if (matches.length > 0) {
                 output.push([originTerm, matches.length, matches[0]]);
                 matches.slice(1).forEach(match => {
-                    output.push(["", "", match]);
+                    output.push(['', '', match]);
                 });
             }
         });
@@ -86,7 +86,7 @@ function displayOutput(result) {
     // Create a download link for the CSV file
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "sequence_match_results.csv");
+    link.setAttribute("download", "teste_seguranca.csv");
 
     // Append the link to the body and click it to trigger the download
     document.body.appendChild(link);
@@ -95,3 +95,38 @@ function displayOutput(result) {
     // Remove the link from the document after the download
     document.body.removeChild(link);
 }
+
+// function displayOutput(result) {
+//     // Convert result array to CSV format
+//     let csvContent = "data:text/csv;charset=utf-8,";
+
+//     // Add headers
+//     csvContent += "Termos,Numero de Ocorrencias,Termo Correspondentes\n";
+
+//     // Add each result row to CSV content, without quotes unless necessary
+//     result.forEach(row => {
+//         const rowContent = row.map(field => {
+//             // Only add quotes if the field contains a comma or newline
+//             if (field.includes(",") || field.includes("\n")) {
+//                 return `"${field}"`;
+//             }
+//             return field; // No quotes needed for simple fields
+//         }).join(","); // Join the fields with commas
+//         csvContent += rowContent + "\n"; // Add new line at the end of each row
+//     });
+
+//     // Encode CSV content as a URI
+//     const encodedUri = encodeURI(csvContent);
+
+//     // Create a download link for the CSV file
+//     const link = document.createElement("a");
+//     link.setAttribute("href", encodedUri);
+//     link.setAttribute("download", "teste_sem_aspas.csv"); // Set file name
+
+//     // Append the link to the body and click it to trigger the download
+//     document.body.appendChild(link);
+//     link.click();
+
+//     // Remove the link from the document after the download
+//     document.body.removeChild(link);
+// }
